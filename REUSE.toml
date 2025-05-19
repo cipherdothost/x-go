@@ -1,0 +1,20 @@
+version = 1
+
+[[annotations]]
+path = [
+  ".editorconfig",
+  ".github/license-3rdparty.tpl",
+  ".gitignore",
+  ".golangci.yml",
+  "cover.out",
+  "LICENSE-3rdparty.csv",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2025 The Cipher Host Team <team@cipher.host>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "go.sum"
+precedence = "override"
+SPDX-FileCopyrightText = "2025 The Cipher Host Team <team@cipher.host>"
+SPDX-License-Identifier = "MIT"
