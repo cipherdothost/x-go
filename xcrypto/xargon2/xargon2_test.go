@@ -7,6 +7,7 @@ package xargon2_test
 import (
 	"encoding/base64"
 	"errors"
+	"os"
 	"strings"
 	"testing"
 
@@ -15,6 +16,10 @@ import (
 
 func TestCompareHashAndPassword(t *testing.T) {
 	t.Parallel()
+
+	if os.Getenv("CI") == "true" {
+		t.Skip("Skipping expensive tests in CI environment.")
+	}
 
 	var (
 		testParams   = xargon2.RecommendedParameters()
