@@ -11,6 +11,16 @@ import (
 	"go.cipher.host/x/xcrypto/xtls"
 )
 
+// Doer represents the ability to execute HTTP requests. It abstracts HTTP
+// client implementations to make testing easier and enable flexible client injection.
+//
+// The standard http.Client implements this interface.
+type Doer interface {
+	// Do executes the given HTTP request and returns the response. The caller
+	// is responsible for closing the response body when done.
+	Do(req *http.Request) (*http.Response, error)
+}
+
 // DefaultClientTimeout is the default timeout for the http.Client.
 const DefaultClientTimeout = 15 * time.Second
 
